@@ -1,52 +1,62 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+@import "../../styles/fonts";
 
 .container {
   width: 100%;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 13vh;
+  font-weight: $font-bold;
+  @include flex(row, center, center);
 
   .headerWrapper {
     width: 95%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(row, center, space-between);
+
+    .logo {
+      height: 50%;
+      @include flex(row, center, center);
+
+      img {
+        height: 100%;
+      }
+
+      span {
+        font-size: 1.5rem;
+      }
+    }
 
     .links {
       width: 40%;
+
       ul {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
         gap: 3rem;
+        list-style: none;
+        @include flex(row, center, space-evenly);
       }
     }
 
     .search {
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex(row, center, space-between);
 
       label {
         position: relative;
 
         span {
-          width: 2.5rem;
-          height: 2.5rem;
           top: 50%;
           right: 1rem;
-          transform: translateY(-50%);
+          width: 1.3rem;
+          height: 1.3rem;
           position: absolute;
-          background-color: red;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
           border-radius: 50%;
+          transform: translateY(-50%);
+          @include flex(row, center, space-between);
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
 
@@ -56,9 +66,25 @@
         border: none;
         outline: none;
         padding: 1rem;
+        font-size: 1.05rem;
         border-radius: 25px;
         border: 1px solid $color-white;
         background-color: $color-gray-light;
+
+        &::placeholder {
+          color: $color-gray-dark;
+        }
+      }
+    }
+
+    .account,
+    .cart {
+      gap: 0.5rem;
+      height: 100%;
+      @include flex(row, center, center);
+
+      img {
+        height: 17%;
       }
     }
   }
