@@ -22,6 +22,7 @@
       }
 
       span {
+        color: $color-primary;
         font-size: 1.5rem;
       }
     }
@@ -33,6 +34,26 @@
         gap: 3rem;
         list-style: none;
         @include flex(row, center, space-evenly);
+
+        li {
+          cursor: pointer;
+          position: relative;
+
+          &::before {
+            content: " ";
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            position: absolute;
+            background-color: $color-black;
+            transition: width 0.2s ease-in-out;
+          }
+
+          &:hover::before {
+            width: 100%;
+          }
+        }
       }
     }
 
