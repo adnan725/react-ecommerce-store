@@ -30,12 +30,16 @@ const Header = (props: Props) => {
           </label>
         </div>
         <div className={styles.account}>
-          <img src="../../../../public/media/icons/user.png" alt="user" />
-          <span>Account</span>
+          <div>
+            <img src="../../../../public/media/icons/user.png" alt="user" />
+            <span>Account</span>
+          </div>
         </div>
         <div className={styles.cart}>
-          <img src="../../../../public/media/icons/cart.png" alt="user" />
-          <span>Account</span>
+          <div>
+            <img src="../../../../public/media/icons/cart.png" alt="user" />
+            <span>Account</span>
+          </div>
         </div>
       </div>
     </div>
